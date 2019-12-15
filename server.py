@@ -38,5 +38,10 @@ def mixes():
     return render_template("mixes.html", active='mixes')
 
 
+@app.route("/links")
+def links():
+    return render_template("links.html", active="links")
+
+
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=8000, debug=True)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- My custom cSS -->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper black">
+            <div class="brand-logo center">avaren</div>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li class="{% if active == 'home' %}active grey darken-4{% endif %}"> <a href="/">home</a></li>
+                <li class="{% if active == 'precipice-ep' %}active grey darken-4{% endif %}"> <a href="/precipice-ep/">precipice ep</a></li>
+                <li class="{% if active == 'demos' %}active grey darken-4{% endif %}"> <a href="/demos/">demos</a></li>
+                <li class="{% if active == 'mixes' %}active grey darken-4{% endif %}"> <a href="/mixes/">mixes</a></li>
+            </ul>
+
+            <ul class="right hide-on-med-and-down">
+                <li class="nav-icon"><a href="https://instagram.com/avarenmusic" uk-icon="icon: instagram"></a></li class="nav-icon">
+                <li class="nav-icon"><a href="https://soundcloud.com/avaren" uk-icon="icon: soundcloud"></a></li>
+                <li class="nav-icon"><a href="https://twitter.com/avarenmusic" uk-icon="icon: twitter"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

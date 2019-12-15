@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% set active_page = 'index' %}
+{% block content %}
+<div class="container">
+    <br>
+
+    <div class="row center valign-wrapper">
+        <div class="col s3">
+            <hr class="home-bar">
+        </div>
+
+        <div class="col s12">
+            <div class="card z-depth-4">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="materialboxed activator responsive-img" src="static/img/Avaren Precipice Cover.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator">precipice ep</span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title">
+                        <p>my first ep</p>
+                        <i class="material-icons right">close</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s3">
+            <hr class="home-bar">
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row center valign-wrapper">
+        <div class="col s12">
+            <hr class="home-bar">
+        </div>
+    </div>
+
+    <div class="row center valign-wrapper">
+        <div class="col s6">
+            <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/3305377&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        </div>
+
+        <div class="col s6">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.materialboxed').materialbox();
+      });
+</script>
+{% endblock %}

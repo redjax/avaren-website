@@ -38,7 +38,7 @@ def mixes():
     return render_template("mixes.html", active='mixes')
 
 
-@app.route("/links")
+@app.route("/links/")
 def links():
     return render_template("links.html", active="links")
 

@@ -13,40 +13,92 @@
     <link rel="stylesheet" href="static/css/custom.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/css/uikit.min.css" />
-
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/js/uikit-icons.min.js"></script>
 
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper black">
-            <div class="brand-logo center">avaren</div>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li class="{% if active == 'home' %}active grey darken-4{% endif %}"><a href="/">home</a></li>
-                <li class="{% if active == 'precipice-ep' %}active grey darken-4{% endif %}"> <a href="/precipice-ep/">precipice ep</a></li>
-                <li class="{% if active == 'demos' %}active grey darken-4{% endif %}"> <a href="/demos/">demos</a></li>
-                <li class="{% if active == 'mixes' %}active grey darken-4{% endif %}"><a href="/mixes/">mixes</a></li>
-                <li class="{% if active == 'links' %}active grey darken-4{% endif %}"><a href="/links/">links</a></li>
-            </ul>
+    <header>
+        <nav>
+            <div class="nav-wrapper black">
+                <div class="brand-logo center">avaren</div>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li class="{% if active == 'home' %}active grey darken-4{% endif %}"><a href="/">home</a></li>
+                    <li class="{% if active == 'precipice-ep' %}active grey darken-4{% endif %}"> <a
+                            href="/precipice-ep/">precipice ep</a></li>
+                    <li class="{% if active == 'demos' %}active grey darken-4{% endif %}"> <a href="/demos/">demos</a>
+                    </li>
+                    <li class="{% if active == 'mixes' %}active grey darken-4{% endif %}"><a href="/mixes/">mixes</a>
+                    </li>
+                    <li class="{% if active == 'links' %}active grey darken-4{% endif %}"><a href="/links/">links</a>
+                    </li>
+                </ul>
 
-            <ul class="right hide-on-med-and-down">
-                <li class="nav-icon"><a href="https://instagram.com/avarenmusic" uk-icon="icon: instagram"></a></li>
-                <li class="nav-icon"><a href="https://soundcloud.com/avaren" uk-icon="icon: soundcloud"></a></li>
-                <li class="nav-icon"><a href="https://twitter.com/avarenmusic" uk-icon="icon: twitter"></a></li>
-            </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li class="nav-icon"><a href="https://instagram.com/avarenmusic"><i
+                                class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-icon"><a href="https://soundcloud.com/avaren"><i class="fab fa-soundcloud"></i></a>
+                    </li>
+                    <li class="nav-icon"><a href="https://twitter.com/avarenmusic"><i class="fab fa-twitter"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Collapsed on mobile -->
+        <ul class="sidenav" id="mobile-demo">
+            <li class="{% if active == 'home' %}active grey darken-4{% endif %}"><a class="{% if active == 'home' %}white-text{% else %}black-text{% endif %}" href="/">home</a></li>
+            <li class="{% if active == 'precipice-ep' %}active grey darken-4{% endif %}"> <a class="{% if active == 'precipice-ep' %}white-text{% else %}black-text{% endif %}"
+                    href="/precipice-ep/">precipice ep</a></li>
+            <li class="{% if active == 'demos' %}active grey darken-4{% endif %}"> <a class="{% if active == 'demos' %}white-text{% else %}black-text{% endif %}" href="/demos/">demos</a>
+            </li>
+            <li class="{% if active == 'mixes' %}active grey darken-4{% endif %}"><a class="{% if active == 'mixes' %}white-text{% else %}black-text{% endif %}" href="/mixes/">mixes</a>
+            </li>
+            <li class="{% if active == 'links' %}active grey darken-4{% endif %}"><a class="{% if active == 'links' %}white-text{% else %}black-text{% endif %}" href="/links/">links</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <br />
+
+            {% block content %}
+            {% endblock %}
+
         </div>
-    </nav>
+    </main>
 
-    {% block content %}
-    {% endblock %}
+    <footer class="page-footer black sticky">
+        <div class="container">
+            <div class="footer-copyright">
+                © 2019 copyright avaren music
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"
+                        style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- Collapse navbar on mobile -->
+    <script>
+        M.AutoInit();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+          });
+    </script>
+
+    <!-- FontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/f8c656f389.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

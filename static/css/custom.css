@@ -7,3 +7,14 @@ li.nav-icon {
     padding-left: 1ex;
     padding-right: 1ex;
 }
+
+/* Sticky footer */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
